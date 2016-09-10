@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Package_Manager.View.LoginControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Package_Manager.View"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <controls:TransitioningContentControl x:Name="transition" Transition="Down" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+            <StackPanel HorizontalAlignment="Center" Height="200" Width="500" VerticalAlignment="Center" Background="{DynamicResource AccentColorBrush}" >
+                <TextBlock FontSize="18"
+                          Margin="20,10,0,0" 
+                           Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" TextDecorations="{x:Null}">Login</TextBlock>
+                <TextBox Name="tbUsername"
+                         ToolTip="Type username here"
+                    Margin="0,10,0,0" 
+                         Width="250"
+                         Height="30"
+                         TextAlignment="Center"
+                         controls:TextBoxHelper.Watermark="Username"
+                         controls:TextBoxHelper.IsWaitingForData="True"
+                         controls:TextBoxHelper.ButtonContent=""
+                         controls:TextBoxHelper.ButtonFontFamily="wingdings"
+                         Style="{DynamicResource MetroButtonTextBox}"
+                         controls:TextBoxHelper.UseFloatingWatermark="False" Foreground="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}" FontSize="16"/>
+                <TextBox Name="tbPassword"
+                         ToolTip="Type password here"
+                    Margin="0,20,0,0" 
+                         Width="250"
+                         Height="30"
+                         TextAlignment="Center"
+                         controls:TextBoxHelper.Watermark="Password"
+                         controls:TextBoxHelper.IsWaitingForData="True"
+                         controls:TextBoxHelper.ButtonContent=""
+                         controls:TextBoxHelper.ButtonFontFamily="wingdings"
+                         Style="{DynamicResource MetroButtonTextBox}"
+                         controls:TextBoxHelper.UseFloatingWatermark="False" Foreground="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}" FontSize="16"/>
+            </StackPanel>
+        </controls:TransitioningContentControl>
+
+    </Grid>
+</UserControl>

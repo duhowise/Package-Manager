@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using Package_Manager.View;
 
 namespace Package_Manager
 {
@@ -23,6 +24,21 @@ namespace Package_Manager
         public ParentWindow()
         {
             InitializeComponent();
+            this.Loaded += OnLoaded;
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
+        {
+            this.DataContext = new MainContentView(NavigateToView);
+        }
+
+        private void NavigateToView(UserControl view)
+        {
+            MainArea.Content = view;
         }
     }
 }
