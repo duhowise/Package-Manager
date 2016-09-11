@@ -5,12 +5,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Package_Manager"
+        xmlns:view="clr-namespace:Package_Manager.View"
         mc:Ignorable="d"
         Title="Package Manager" Height="300" Width="500" 
                       WindowStartupLocation="CenterScreen" 
                       WindowState="Maximized" TitleCaps="False"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       NonActiveGlowBrush="{DynamicResource AccentColorBrush}" Loaded="MetroWindow_Loaded">
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl>
+            <Controls:Flyout Name="drawer" Position="Right"
+                             Theme="Adapt"
+                             IsModal="True"
+                             Width="300"
+                             AreAnimationsEnabled="True"
+                             BorderThickness="1"
+                             BorderBrush="{DynamicResource AccentColorBrush}"
+                             Header="Settings">
+                <view:SettingsControl></view:SettingsControl>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"></RowDefinition>
@@ -98,7 +113,7 @@
                        FontFamily="{DynamicResource HeaderFontFamily}"
                        HorizontalAlignment="Center"
                            Foreground="#CCFFFFFF">View Users</Label>
-                <Button Name="btnSettings" Width="80" Height="80" Grid.Column="4" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}">
+                <Button Name="btnSettings" Width="80" Height="80" Grid.Column="4" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}" Click="btnSettings_Click">
                     <Rectangle Width="40" Height="40"
                                Fill="{Binding Path=Foreground,
                         RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">

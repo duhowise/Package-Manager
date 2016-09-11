@@ -57,6 +57,12 @@ namespace Package_Manager
         {
             //TODO:HANDLE LOGIN / EXPLORE PACKAGES BTN CLICK
             new MainContentView(NavigateToView).NavigateToExplorePackageControl();
+            
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            this.drawer.IsOpen = true;
         }
     }
 }
