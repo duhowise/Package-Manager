@@ -75,6 +75,9 @@
       <DependentUpon>NewPackageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewModelBase.cs" />
+    <Compile Include="View\ViewPackagesControl.xaml.cs">
+      <DependentUpon>ViewPackagesControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ParentWindow.xaml.cs">
@@ -126,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewPackageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewPackagesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

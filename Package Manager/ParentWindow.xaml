@@ -22,7 +22,7 @@
             <ColumnDefinition Width="5*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ContentPresenter Grid.Row="1" Grid.Column="2" x:Name="MainArea"></ContentPresenter>
+        <Controls:TransitioningContentControl Transition="Down" Grid.Row="1" Grid.Column="2" x:Name="MainArea"></Controls:TransitioningContentControl>
         <StackPanel Height="120" Grid.Column="0" Margin="0,0,0,0" Grid.Row="0" HorizontalAlignment="Stretch"
                     Grid.ColumnSpan="4" 
                  Background="{DynamicResource AccentColorBrush}"  >
@@ -54,7 +54,7 @@
                        HorizontalAlignment="Center"
                            Foreground="#CCFFFFFF">New Package</Label>
 
-                <Button Name="btnExplorePackages" Width="80" Height="80" Grid.Column="1" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}">
+                <Button Name="btnExplorePackages" Width="80" Height="80" Grid.Column="1" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}" Click="btnExplorePackages_Click">
                     <Rectangle Width="40" Height="40"
                                Fill="{Binding Path=Foreground,
                         RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">

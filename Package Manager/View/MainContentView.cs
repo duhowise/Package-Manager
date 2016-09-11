@@ -28,5 +28,10 @@ namespace Package_Manager.View
 
         }
 
+        public void NavigateToExplorePackageControl()
+        {
+            var viewPackagesControl = new ViewPackagesControl();
+            navigateToView(viewPackagesControl);
+        }
     }
 }

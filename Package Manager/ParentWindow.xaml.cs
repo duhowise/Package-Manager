@@ -52,5 +52,11 @@ namespace Package_Manager
             //TODO:HANDLE LOGIN / LOGOUT BTN CLICK
             new MainContentView(NavigateToView).Initializate();
         }
+
+        private void btnExplorePackages_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO:HANDLE LOGIN / EXPLORE PACKAGES BTN CLICK
+            new MainContentView(NavigateToView).NavigateToExplorePackageControl();
+        }
     }
 }
