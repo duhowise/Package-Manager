@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using Package_Manager.View;
 
 namespace Package_Manager
 {
@@ -23,6 +24,45 @@ namespace Package_Manager
         public ParentWindow()
         {
             InitializeComponent();
+            this.Loaded += OnLoaded;
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
+        {
+            this.DataContext = new MainContentView(NavigateToView);
+        }
+
+        private void NavigateToView(UserControl view)
+        {
+            MainArea.Content = view;
+        }
+
+        private void btnNewPackage_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO:HANDLE NEW PACKAGE BTN CLICK
+            new MainContentView(NavigateToView).NavigateToNewPackageControl();
+        }
+
+        private void btnLoginLogout_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO:HANDLE LOGIN / LOGOUT BTN CLICK
+            new MainContentView(NavigateToView).Initializate();
+        }
+
+        private void btnExplorePackages_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO:HANDLE LOGIN / EXPLORE PACKAGES BTN CLICK
+            new MainContentView(NavigateToView).NavigateToExplorePackageControl();
+            
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            this.drawer.IsOpen = true;
         }
     }
 }

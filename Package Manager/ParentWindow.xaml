@@ -5,9 +5,143 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Package_Manager"
+        xmlns:view="clr-namespace:Package_Manager.View"
         mc:Ignorable="d"
-        Title="Package Manager" Height="300" Width="300" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Package Manager" Height="300" Width="500" 
+                      WindowStartupLocation="CenterScreen" 
+                      WindowState="Maximized" TitleCaps="False"
+                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      NonActiveGlowBrush="{DynamicResource AccentColorBrush}" Loaded="MetroWindow_Loaded">
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl>
+            <Controls:Flyout Name="drawer" Position="Right"
+                             Theme="Adapt"
+                             IsModal="True"
+                             Width="300"
+                             AreAnimationsEnabled="True"
+                             BorderThickness="1"
+                             BorderBrush="{DynamicResource AccentColorBrush}"
+                             Header="Settings">
+                <view:SettingsControl></view:SettingsControl>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Controls:TransitioningContentControl Transition="Down" Grid.Row="1" Grid.Column="2" x:Name="MainArea"></Controls:TransitioningContentControl>
+        <StackPanel Height="120" Grid.Column="0" Margin="0,0,0,0" Grid.Row="0" HorizontalAlignment="Stretch"
+                    Grid.ColumnSpan="4" 
+                 Background="{DynamicResource AccentColorBrush}"  >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Name="btnNewPackage" Width="80" Height="80" Grid.Column="0" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}" Click="btnNewPackage_Click">
+                    <Rectangle Width="40" Height="40"
+                               Fill="{Binding Path=Foreground,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_cabinet_files_variant}"></VisualBrush>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+                <Label FontSize="18"
+                           Grid.Row="1" Grid.Column="0"
+                       FontFamily="{DynamicResource HeaderFontFamily}"
+                       HorizontalAlignment="Center"
+                           Foreground="#CCFFFFFF">New Package</Label>
+
+                <Button Name="btnExplorePackages" Width="80" Height="80" Grid.Column="1" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}" Click="btnExplorePackages_Click">
+                    <Rectangle Width="40" Height="40"
+                               Fill="{Binding Path=Foreground,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_folder_open}"></VisualBrush>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+                <Label FontSize="18"
+                           Grid.Row="1" Grid.Column="1"
+                       FontFamily="{DynamicResource HeaderFontFamily}"
+                       HorizontalAlignment="Center"
+                           Foreground="#CCFFFFFF">Explore Packages</Label>
+
+                <Button Width="80" Height="80" Grid.Column="2" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}">
+                    <Rectangle Width="40" Height="40"
+                               Fill="{Binding Path=Foreground,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_save}"></VisualBrush>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+
+                <Label FontSize="18"
+                           Grid.Row="1" Grid.Column="2"
+                       FontFamily="{DynamicResource HeaderFontFamily}"
+                       HorizontalAlignment="Center"
+                           Foreground="#CCFFFFFF">Register Users</Label>
+                <Button Width="80" Height="80" Grid.Column="3" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}">
+                    <Rectangle Width="40" Height="40"
+                               Fill="{Binding Path=Foreground,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_folder_people}"></VisualBrush>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+                <Label FontSize="18"
+                           Grid.Row="1" Grid.Column="3"
+                       FontFamily="{DynamicResource HeaderFontFamily}"
+                       HorizontalAlignment="Center"
+                           Foreground="#CCFFFFFF">View Users</Label>
+                <Button Name="btnSettings" Width="80" Height="80" Grid.Column="4" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}" Click="btnSettings_Click">
+                    <Rectangle Width="40" Height="40"
+                               Fill="{Binding Path=Foreground,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_cog}"></VisualBrush>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+                <Label  FontSize="18"
+                           Grid.Row="1" Grid.Column="4"
+                       FontFamily="{DynamicResource HeaderFontFamily}"
+                       HorizontalAlignment="Center"
+                           Foreground="#CCFFFFFF">Settings</Label>
+                <Button Name="btnLoginLogout" Width="80" Height="80" Grid.Column="5" Grid.Row="0" Style="{DynamicResource MetroCircleButtonStyle}" Click="btnLoginLogout_Click">
+                    <Rectangle Width="40" Height="40"
+                               Fill="{Binding Path=Foreground,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_user}"></VisualBrush>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+                <Label Name="lbLoginLogout" FontSize="18"
+                           Grid.Row="1" Grid.Column="5"
+                       FontFamily="{DynamicResource HeaderFontFamily}"
+                       HorizontalAlignment="Center"
+                           Foreground="#CCFFFFFF">Log Out</Label>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Controls:MetroWindow>
