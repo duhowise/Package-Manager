@@ -40,5 +40,17 @@ namespace Package_Manager
         {
             MainArea.Content = view;
         }
+
+        private void btnNewPackage_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO:HANDLE NEW PACKAGE BTN CLICK
+            new MainContentView(NavigateToView).NavigateToNewPackageControl();
+        }
+
+        private void btnLoginLogout_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO:HANDLE LOGIN / LOGOUT BTN CLICK
+            new MainContentView(NavigateToView).Initializate();
+        }
     }
 }

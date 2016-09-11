@@ -440,11 +440,11 @@
     </Canvas>
 
     <Canvas x:Key="appbar_cabinet_files_variant" Width="76" Height="76" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0">
-        <Path Width="38" Height="38" Canvas.Left="19" Canvas.Top="19" Stretch="Fill" Fill="{DynamicResource BlackBrush}" Data="F1 M 23,19L 53,19L 56.9999,25.0001L 57,27L 19,27L 19,25.0001L 23,19 Z M 19,42L 19,29.0001L 56.9999,29.0001L 57,42L 54.038,42L 52.7168,35.7843L 23.4742,42L 19,42 Z M 34,33L 34,35L 42,35L 42,33L 34,33 Z M 19,57L 19,44L 56.9999,44L 57,57L 19,57 Z M 34,48L 34,50L 42,50L 42,48L 34,48 Z "/>
+        <Path Width="38" Height="38" Canvas.Left="19" Canvas.Top="19" Stretch="Fill" Fill="{DynamicResource WhiteColorBrush}" Data="F1 M 23,19L 53,19L 56.9999,25.0001L 57,27L 19,27L 19,25.0001L 23,19 Z M 19,42L 19,29.0001L 56.9999,29.0001L 57,42L 54.038,42L 52.7168,35.7843L 23.4742,42L 19,42 Z M 34,33L 34,35L 42,35L 42,33L 34,33 Z M 19,57L 19,44L 56.9999,44L 57,57L 19,57 Z M 34,48L 34,50L 42,50L 42,48L 34,48 Z "/>
     </Canvas>
 
     <Canvas x:Key="appbar_cabinet_files" Width="76" Height="76" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0">
-        <Path Width="42" Height="38" Canvas.Left="17" Canvas.Top="19" Stretch="Fill" Fill="{DynamicResource BlackBrush}" Data="F1 M 19,38L 19,22L 24,22L 24,20L 29,20L 29,19L 46.75,19L 57,29.25L 57,38L 59,38L 59,57L 58.5833,57L 17.4167,57L 17,57L 17,38L 19,38 Z M 24,38L 24,25L 22,25L 22,38L 24,38 Z M 27,23L 27,38L 29,38L 29,23L 27,23 Z M 43,46L 43,49L 33,49L 33,46L 43,46 Z M 54,38L 54,33L 43,33L 43,22L 32,22L 32,38L 54,38 Z M 46,22.75L 46,30L 53.25,30L 46,22.75 Z M 21,42L 21,53L 55,53L 55,42L 21,42 Z "/>
+        <Path Width="42" Height="38" Canvas.Left="17" Canvas.Top="19" Stretch="Fill" Fill="{DynamicResource WhiteBrush}" Data="F1 M 19,38L 19,22L 24,22L 24,20L 29,20L 29,19L 46.75,19L 57,29.25L 57,38L 59,38L 59,57L 58.5833,57L 17.4167,57L 17,57L 17,38L 19,38 Z M 24,38L 24,25L 22,25L 22,38L 24,38 Z M 27,23L 27,38L 29,38L 29,23L 27,23 Z M 43,46L 43,49L 33,49L 33,46L 43,46 Z M 54,38L 54,33L 43,33L 43,22L 32,22L 32,38L 54,38 Z M 46,22.75L 46,30L 53.25,30L 46,22.75 Z M 21,42L 21,53L 55,53L 55,42L 21,42 Z "/>
     </Canvas>
 
     <Canvas x:Key="appbar_cabinet_in" Width="76" Height="76" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0">

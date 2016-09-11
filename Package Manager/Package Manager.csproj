@@ -71,6 +71,9 @@
       <DependentUpon>LoginControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainContentView.cs" />
+    <Compile Include="View\NewPackageControl.xaml.cs">
+      <DependentUpon>NewPackageControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +122,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LoginControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewPackageControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -15,14 +15,17 @@ namespace Package_Manager.View
 
     
 
-        private void Initializate()
+        public void Initializate()
         {
             var loginControl = new LoginControl();
+            navigateToView(loginControl);    
+        }
 
-            navigateToView(loginControl);
+        public void NavigateToNewPackageControl()
+        {
+            var newPackageControl = new NewPackageControl();
+            navigateToView(newPackageControl);
 
-
-            
         }
 
     }
