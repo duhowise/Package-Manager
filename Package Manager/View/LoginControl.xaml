@@ -10,11 +10,10 @@
              d:DesignHeight="200" d:DesignWidth="500">
     <Grid HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel HorizontalAlignment="Center" Grid.Column="1" Height="200" Width="500" VerticalAlignment="Center"  >
+        <StackPanel HorizontalAlignment="Center" Height="200" Width="500" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="-166,0,-167,0"  >
             <TextBlock FontSize="18"
                        FontFamily="{DynamicResource HeaderFontFamily}"
                        HorizontalAlignment="Center"
