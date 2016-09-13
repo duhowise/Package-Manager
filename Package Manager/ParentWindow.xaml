@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Package_Manager"
         xmlns:view="clr-namespace:Package_Manager.View"
         mc:Ignorable="d"
-        Title="Package Manager" Height="300" Width="500" 
+        Title="Package Manager" Height="500" Width="1000" 
                       WindowStartupLocation="CenterScreen" 
                       WindowState="Maximized" TitleCaps="False"
                       GlowBrush="{DynamicResource AccentColorBrush}"
@@ -28,18 +28,19 @@
     </Controls:MetroWindow.Flyouts>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="110"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Controls:TransitioningContentControl Transition="Down" Grid.Row="1" Grid.Column="2" x:Name="MainArea"></Controls:TransitioningContentControl>
+        <Controls:TransitioningContentControl Transition="Down" Grid.Row="1" Grid.Column="1" 
+                                              x:Name="MainArea"></Controls:TransitioningContentControl>
         <StackPanel Height="120" Grid.Column="0" Margin="0,0,0,0" Grid.Row="0" HorizontalAlignment="Stretch"
-                    Grid.ColumnSpan="4" 
+                    Grid.ColumnSpan="3" 
                  Background="{DynamicResource AccentColorBrush}"  >
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -143,5 +144,39 @@
                            Foreground="#CCFFFFFF">Log Out</Label>
             </Grid>
         </StackPanel>
+        <DockPanel Grid.Column="0" Grid.Row="2" 
+                   Grid.ColumnSpan="3">
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBar.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </StatusBar.ItemsPanel>
+                <StatusBarItem Grid.Column="0">
+                    <TextBlock FontSize="16"
+                       FontFamily="{DynamicResource HeaderFontFamily}"
+                       HorizontalAlignment="Center"
+                          Margin="10,0,0,0" 
+                           Foreground="{DynamicResource WhiteColorBrush}" TextDecorations="{x:Null}">Package Manager</TextBlock>
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="4" DockPanel.Dock="Right"
+                                    HorizontalAlignment="Right"
+                                   >
+                        <Controls:ProgressRing Width="25" Height="25"
+                                              Margin="0,0,10,0"
+                                               Foreground="{DynamicResource WhiteColorBrush}" 
+                                               IsActive="True"></Controls:ProgressRing>
+                    </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+
     </Grid>
 </Controls:MetroWindow>
