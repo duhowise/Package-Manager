@@ -50,7 +50,8 @@ namespace Package_Manager
         private void btnLoginLogout_Click(object sender, RoutedEventArgs e)
         {
             //TODO:HANDLE LOGIN / LOGOUT BTN CLICK
-            new MainContentView(NavigateToView).Initializate();
+            //new MainContentView(NavigateToView).Initializate();
+         
         }
 
         private void btnExplorePackages_Click(object sender, RoutedEventArgs e)
